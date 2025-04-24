@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime, filter, map, switchMap, tap } from 'rxjs';
+import { catchError, debounceTime, EMPTY, filter, map, switchMap, tap, throwError } from 'rxjs';
 import { Item, Livro } from 'src/app/models/interface';
 import { LivroVolumeInfo } from 'src/app/models/livroVolumeInfo';
 import { LivroService } from 'src/app/service/livro.service';
@@ -13,6 +13,7 @@ const PAUSA = 300;
 })
 export class ListaLivrosComponent {
   campoBusca = new FormControl();
+  mensagemErro = ''
 
   constructor(private service: LivroService) {}
 
@@ -23,7 +24,14 @@ export class ListaLivrosComponent {
     tap(() => console.log('fluxo inicial')),
     switchMap((valorDigitado) => this.service.buscar(valorDigitado)),
     tap((retornoAPI) => console.log(retornoAPI)),
-    map((items) =>  this.livrosResultadoParaLivros(items))
+    map((items) =>  this.livrosResultadoParaLivros(items)),
+    catchError(() => {
+      this.mensagemErro = 'OPS, erro ao buscar livros. Recarregue a página.'
+      return EMPTY
+      //EMPTY é um observable que não emite nada, ele completa o observable e precisa recarregar a aplicação
+      // console.log(erro);
+      // return throwError(() => new Error(this.mensagemErro = 'OPS, erro ao buscar livros. Recarregue a página.'));
+    })
   );
 
   livrosResultadoParaLivros(items: Item[]): LivroVolumeInfo[] {

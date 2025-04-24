@@ -7,6 +7,9 @@
     </button>
   </div>
   <p>Busque por assunto, autoria, nome...</p>
+  <div class="resultado mensagem-erro" *ngIf="mensagemErro">
+    {{ mensagemErro }}
+  </div>
   <div
     class="container-card"
     *ngIf="livrosEncontrados$ | async as listaLivros; else telaInicial"
