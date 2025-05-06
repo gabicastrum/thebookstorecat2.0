@@ -1,4 +1,7 @@
+import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,6 +15,7 @@ import { ModalLivroComponent } from './views/modal-livro/modal-livro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AutoriaPipe } from './pipes/autoria.pipe';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import { AutoriaPipe } from './pipes/autoria.pipe';
     LivroComponent,
     ListaLivrosComponent,
     ModalLivroComponent,
-    AutoriaPipe
+    AutoriaPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,10 @@ import { AutoriaPipe } from './pipes/autoria.pipe';
     RouterModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
