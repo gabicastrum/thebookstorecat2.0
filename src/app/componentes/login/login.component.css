@@ -1,0 +1,96 @@
+.login-component {
+  max-width: 50%;
+  min-height: 74%;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  .login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 68px;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+
+    mat-card-header {
+      margin-bottom: 24px;
+
+      mat-card-title {
+        font-size: 32px;
+        font-weight: 400;
+      }
+    }
+
+    mat-card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    mat-card-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: normal;
+
+      button {
+        margin: 0 8px;
+        margin-bottom: 16px;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #6200ea;
+        border: none;
+        border-radius: 8px; /* Bordas arredondadas */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+      }
+
+      button:hover {
+        background-color: #3700b3; /* Cor ao passar o mouse */
+        transform: translateY(-2px); /* Efeito de elevação */
+      }
+
+      button:active {
+        background-color: #1a0080; /* Cor ao clicar */
+        transform: translateY(0); /* Remove elevação */
+      }
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    a {
+      color: #270458; /* Cor do link */
+      font-weight: bold;
+      text-decoration: none; /* Remove o sublinhado padrão */
+      transition: color 0.3s ease, text-decoration 0.3s ease; /* Transições suaves */
+    }
+
+    a:hover {
+      color: #a481f5; /* Cor ao passar o mouse */
+      text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+    }
+
+    a:active {
+      color: #1a0080; /* Cor ao clicar */
+    }
+    }
+  }
