@@ -1,20 +1,48 @@
-<header>
-  <button (click)="irParaTelaInicial()">
+<!-- <header class="app-header">
+  <mat-toolbar class="toolbar-header">
+    <span class="logo">
+      <a routerLink="/">
+        <img
+          class="logo"
+          src="assets/imagens/logo.png"
+          alt="Logo da aplicação Buscante"
+        />
+      </a>
+    </span>
+    <span class="spacer"></span>
+    <div class="links-toolbar">
+      <button class="sobre-contato" href="https://github.com/gabicastrum">
+        Sobre
+      </button>
+      <button
+        class="sobre-contato"
+        href="https://www.linkedin.com/in/gabrieladecastrolaurindo/?originalSubdomain=br"
+      >
+        Contato
+      </button>
+      <ng-container *ngIf="user$ | async as pessoaUsuaria; else login">
+        <a routerLink="/perfil">
+          <img src="assets/icones/user.png" alt="Ícone da pessoa usuária" />
+        </a>
+        <button class="logout" (click)="logout()">SAIR</button>
+      </ng-container>
+      <ng-template #login>
+        <button routerLink="/cadastro" class="cadastre-se">CADASTRE-SE</button>
+        <button routerLink="/login" class="login">LOGIN</button>
+      </ng-template>
+    </div>
+  </mat-toolbar>
+</header> -->
+
+<mat-toolbar>
     <img
       class="logo"
       src="assets/imagens/logo.png"
-      alt="Logo da aplicação Buscante"
+      alt="Logo da aplicação"
     />
-  </button>
-  <div>
-    <img src="assets/imagens/logo2.png" alt="" class="logotipo" />
-  </div>
-  <div>
-    <a href="https://github.com/gabicastrum" target="_blank">Sobre</a>
-    <a
-      href="https://www.linkedin.com/in/gabrieladecastrolaurindo/?originalSubdomain=br"
-      target="_blank"
-      >Contato</a
-    >
-  </div>
-</header>
+  <span class="example-spacer"></span>
+  <button mat-button>Sobre</button>
+  <button mat-button>Contato</button>
+  <button mat-raised-button color="primary">CADASTRE-SE</button>
+  <button mat-stroked-button>LOGIN</button>
+</mat-toolbar>

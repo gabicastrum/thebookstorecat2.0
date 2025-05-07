@@ -16,6 +16,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AutoriaPipe } from './pipes/autoria.pipe';
 import { LoginComponent } from './componentes/login/login.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { ContainerComponent } from './componentes/container/container.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CardComponent } from './componentes/card/card.component';
+import { CardBuscaComponent } from './componentes/card-busca/card-busca.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,11 @@ import { LoginComponent } from './componentes/login/login.component';
     ListaLivrosComponent,
     ModalLivroComponent,
     AutoriaPipe,
-    LoginComponent
+    LoginComponent,
+    ContainerComponent,
+    HomeComponent,
+    CardComponent,
+    CardBuscaComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +49,8 @@ import { LoginComponent } from './componentes/login/login.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatToolbarModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

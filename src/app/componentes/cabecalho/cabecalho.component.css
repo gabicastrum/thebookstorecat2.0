@@ -1,10 +1,19 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background: black;
+  color: white;
+}
+
 header {
-  background-color: #f8eedc;
-  height: 96px;
+  background-color: #faf0de;
+  height: 100px;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content:space-around;
+  justify-content: space-around;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -16,14 +25,49 @@ header a {
   font-size: 18px;
   line-height: 27px;
   margin-right: 1.5rem;
-  width: 79px;
-  height: 48px;
 }
 
 button {
-  background-color: #050C42;
   cursor: pointer;
   border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Botões "Sobre" e "Contato" */
+button.sobre-contato {
+  background-color: transparent;
+  color: #050C42;
+  border: 2px solid #050C42;
+}
+
+button.sobre-contato:hover {
+  background-color: #f0f0f0;
+}
+
+/* Botão "CADASTRE-SE" */
+button.cadastre-se {
+  background-color: #673ab7;
+  color: #ffffff;
+}
+
+button.cadastre-se:hover {
+  background-color: #5a2ea3;
+}
+
+/* Botão "LOGIN" */
+button.login {
+  border: 2px solid #673ab7;
+  color: #673ab7;
+  background-color: transparent;
+}
+
+button.login:hover {
+  background-color: #e0d4f7;
 }
 
 .logo {
@@ -31,10 +75,60 @@ button {
   height: auto;
 }
 
-.logotipo {
-  width: 400px;
-  height: auto;
-  margin-right: 1rem;
-  margin-top: 1rem;
+.spacer {
+  flex: 1 1 auto;
 }
 
+.links-toolbar {
+  display: flex;
+  gap: 1rem;
+}
+
+.links-toolbar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-header {
+  button {
+    margin: 0 16px;
+    background-color: #f6f6f6;
+    cursor: pointer;
+    border: none;
+  }
+
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-toolbar {
+    background-color: #faf0de;
+    color: white;
+  }
+
+  .links-toolbar > *:first-child {
+    margin-right: 0;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  .mat-mdc-outlined-button:not(:disabled) {
+    border-color: #673ab7;
+    color: #673ab7;
+  }
+
+  .logotipo {
+    width: 400px;
+    height: auto;
+    margin-right: 1rem;
+    margin-top: 1rem;
+  }
+}
